@@ -21,15 +21,15 @@
     .attr("width", svgWidth)
     .attr("height", svgHeight);
 
-  // Append an SVG group
+// Append an SVG group
   var chartGroup = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-  // Import Data
+// Import Data from data.csv
   d3.csv("assets/data/data.csv").then(function(journalismData) {
 
-      // Step 1: Parse Data/Cast as numbers
-      // ==============================
+      // Step 1: Parse Plotting Data/Cast as numbers
+      // ===========================================
       journalismData.forEach(function(data) {
         data.poverty = +data.poverty;
         data.healthcare = +data.healthcare;
@@ -51,7 +51,7 @@
       var leftAxis = d3.axisLeft(yLinearScale);
 
       // Step 4: Append Axes to the chart
-      // ==============================
+      // ================================
       chartGroup.append("g")
         .attr("transform", `translate(0, ${chartheight})`)
         .call(bottomAxis);
@@ -60,7 +60,7 @@
         .call(leftAxis);
 
       // Step 5: Create Circles
-      // ==============================
+      // ======================
       var circletextGroup = chartGroup.selectAll("g")
         .data(journalismData)
         .enter()
@@ -83,7 +83,8 @@
       .attr("font-size", "10px")
       .attr("fill", "white");
       
-      // Create axes labels
+      // Step 6: Create axes labels
+      // ==========================
       chartGroup.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 0 - margin.left + 40)
@@ -96,8 +97,7 @@
         .attr("transform", `translate(${chartwidth / 2}, ${chartheight + margin.top + 30})`)
         .attr("class", "axisText")
         .text("In Poverty(%)");
+
     }).catch(function(error) {
       console.log(error);
-    });
-
-
+  });

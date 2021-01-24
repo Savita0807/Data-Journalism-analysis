@@ -14,6 +14,11 @@ body {
   padding-bottom: 80px;
 }
 
+/* Formatting for both X and Y axis  */
+.axisText {
+  font-weight: bold;;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
