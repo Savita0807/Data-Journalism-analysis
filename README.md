@@ -1,6 +1,6 @@
-# D3 Homework - Data Journalism and D3
+# Data-Journalism-analysis- D3 challange
 
-Github page for this challenge:https://savita0807.github.io/D3-challenge/Code/index.html
+Github page for this challenge:https://savita0807.github.io/Data-Journalism-analysis/
 
 ![Newsroom](https://media.giphy.com/media/v2xIous7mnEYg/giphy.gif)
 
